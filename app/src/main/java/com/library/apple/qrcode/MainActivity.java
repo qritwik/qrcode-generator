@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     ImageView imageView;
     String text1;
-    String text2="Raj";
-    String text3;
+//    String text2="Raj";
+//    String text3;
 
 
     @Override
@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 text1 = editText.getText().toString().trim();
-                text3=text1.concat(" "+text2);
+//                text3=text1.concat(" "+text2);
                 MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
 
                 try {
-                    BitMatrix bitMatrix = multiFormatWriter.encode(text3, BarcodeFormat.QR_CODE,200,200);
+                    BitMatrix bitMatrix = multiFormatWriter.encode(text1, BarcodeFormat.QR_CODE,200,200);
                     BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
                     Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
                     imageView.setImageBitmap(bitmap );
